@@ -12,6 +12,8 @@ var led10 = new Gpio(25, 'out')
 var led11 = new Gpio(12, 'out')
 var led12 = new Gpio(16, 'out')
 
+var server = require('./server')(led)
+
 var turnOn1=()=>{
   led1.writeSync(1)
   setTimeout(()=>{
