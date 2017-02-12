@@ -12,7 +12,7 @@ var led10 = new Gpio(25, 'out')
 var led11 = new Gpio(12, 'out')
 var led12 = new Gpio(16, 'out')
 
-var turnOn=()=>{
+var turnOn1=()=>{
   led1.writeSync(1)
   setTimeout(()=>{
     led2.writeSync(1)
@@ -48,11 +48,91 @@ var turnOn=()=>{
     led12.writeSync(1)
   }, 550)
   setTimeout(()=>{
-    turnOff()
+    turnOff1()
   }, 600)
 }
 
-var turnOff=()=>{
+var turnOff1=()=>{
+  led1.writeSync(0)
+  setTimeout(()=>{
+    led2.writeSync(0)
+  }, 50)
+  setTimeout(()=>{
+    led3.writeSync(0)
+  }, 100)
+  setTimeout(()=>{
+    led4.writeSync(0)
+  }, 150)
+  setTimeout(()=>{
+    led5.writeSync(0)
+  }, 200)
+  setTimeout(()=>{
+    led6.writeSync(0)
+  }, 250)
+  setTimeout(()=>{
+    led7.writeSync(0)
+  }, 300)
+  setTimeout(()=>{
+    led8.writeSync(0)
+  }, 350)
+  setTimeout(()=>{
+    led9.writeSync(0)
+  }, 400)
+  setTimeout(()=>{
+    led10.writeSync(0)
+  }, 450)
+  setTimeout(()=>{
+    led11.writeSync(0)
+  }, 500)
+  setTimeout(()=>{
+    led12.writeSync(0)
+  }, 550)
+  setTimeout(()=>{
+    turnOn2()
+  }, 600)
+}
+
+var turnOn2=()=>{
+  led12.writeSync(1)
+  setTimeout(()=>{
+    led11.writeSync(1)
+  }, 50)
+  setTimeout(()=>{
+    led10.writeSync(1)
+  }, 100)
+  setTimeout(()=>{
+    led9.writeSync(1)
+  }, 150)
+  setTimeout(()=>{
+    led8.writeSync(1)
+  }, 200)
+  setTimeout(()=>{
+    led7.writeSync(1)
+  }, 250)
+  setTimeout(()=>{
+    led6.writeSync(1)
+  }, 300)
+  setTimeout(()=>{
+    led5.writeSync(1)
+  }, 350)
+  setTimeout(()=>{
+    led4.writeSync(1)
+  }, 400)
+  setTimeout(()=>{
+    led3.writeSync(1)
+  }, 450)
+  setTimeout(()=>{
+    led2.writeSync(1)
+  }, 500)
+  setTimeout(()=>{
+    led1.writeSync(1)
+  }, 550)
+  setTimeout(()=>{
+    turnOff2()
+  }, 600)
+}
+
+var turnOff2=()=>{
   led12.writeSync(0)
   setTimeout(()=>{
     led11.writeSync(0)
@@ -90,7 +170,7 @@ var turnOff=()=>{
 }
 
 var vi = setInterval(()=>{
-  turnOn()
+  turnOn1()
 }, 1200)
 
 
