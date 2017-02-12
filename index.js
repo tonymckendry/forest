@@ -89,6 +89,8 @@ var turnOff=()=>{
   }, 550)
 }
 
+turnOn()
+
 // Stop blinking the LED and turn it off after 5 seconds.
 setTimeout(function() {
     led1.writeSync(0);  // Turn LED off.
