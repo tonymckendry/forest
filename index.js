@@ -12,7 +12,7 @@ var led10 = new Gpio(25, 'out')
 var led11 = new Gpio(12, 'out')
 var led12 = new Gpio(16, 'out')
 
-let turnOn=()=>{
+var turnOn=()=>{
   led1.writeSync(1)
   setTimeout(()=>{
     led2.writeSync(1)
@@ -52,7 +52,7 @@ let turnOn=()=>{
   }, 600)
 }
 
-let turnOff=()=>{
+var turnOff=()=>{
   led1.writeSync(0)
   setTimeout(()=>{
     led2.writeSync(0)
