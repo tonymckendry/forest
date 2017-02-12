@@ -171,7 +171,7 @@ var turnOff2=()=>{
 
 var vi = setInterval(()=>{
   turnOn1()
-}, 1200)
+}, 2400)
 
 
 // Stop blinking the LED and turn it off after 5 seconds.
