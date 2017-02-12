@@ -53,49 +53,50 @@ var turnOn=()=>{
 }
 
 var turnOff=()=>{
-  led1.writeSync(0)
-  setTimeout(()=>{
-    led2.writeSync(0)
-  }, 50)
-  setTimeout(()=>{
-    led3.writeSync(0)
-  }, 100)
-  setTimeout(()=>{
-    led4.writeSync(0)
-  }, 150)
-  setTimeout(()=>{
-    led5.writeSync(0)
-  }, 200)
-  setTimeout(()=>{
-    led6.writeSync(0)
-  }, 250)
-  setTimeout(()=>{
-    led7.writeSync(0)
-  }, 300)
-  setTimeout(()=>{
-    led8.writeSync(0)
-  }, 350)
-  setTimeout(()=>{
-    led9.writeSync(0)
-  }, 400)
-  setTimeout(()=>{
-    led10.writeSync(0)
-  }, 450)
+  led12.writeSync(0)
   setTimeout(()=>{
     led11.writeSync(0)
+  }, 50)
+  setTimeout(()=>{
+    led10.writeSync(0)
+  }, 100)
+  setTimeout(()=>{
+    led9.writeSync(0)
+  }, 150)
+  setTimeout(()=>{
+    led8.writeSync(0)
+  }, 200)
+  setTimeout(()=>{
+    led7.writeSync(0)
+  }, 250)
+  setTimeout(()=>{
+    led6.writeSync(0)
+  }, 300)
+  setTimeout(()=>{
+    led5.writeSync(0)
+  }, 350)
+  setTimeout(()=>{
+    led4.writeSync(0)
+  }, 400)
+  setTimeout(()=>{
+    led3.writeSync(0)
+  }, 450)
+  setTimeout(()=>{
+    led2.writeSync(0)
   }, 500)
   setTimeout(()=>{
-    led12.writeSync(0)
+    led1.writeSync(0)
   }, 550)
 }
 
-setInterval(()=>{
+var vi = setInterval(()=>{
   turnOn()
 }, 1200)
 
 
 // Stop blinking the LED and turn it off after 5 seconds.
 setTimeout(function() {
+    clearInterval(vi)
     led1.writeSync(0);  // Turn LED off.
     led1.unexport();    // Unexport GPIO and free resources
     led2.writeSync(0);  // Turn LED off.
