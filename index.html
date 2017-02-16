@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forest</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <h1 class="text-center">Trigger LED</h1>
+  <br/>
+  <br/>
+  <div class="container">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-primary btn-block">Trigger</button>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('button').on('click', function() {
+       $('button').prop('disabled', true).text('Trigerring');
+      $.get('http://localhost:8808/trigger', function(data) {
+       $('button').prop('disabled', false).text('Trigger');
+      });
+    });
+  })
+  </script>
+</body>
+
+</html>
