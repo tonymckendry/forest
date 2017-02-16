@@ -35,6 +35,8 @@
        $('#clear').prop('disabled', false)
       });
     });
+  })
+  $(function() {
     $('#clear').on('click', function() {
        $('#clear').prop('disabled', true);
       $.get('http://10.0.0.75:8088/clear', function(data) {

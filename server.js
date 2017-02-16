@@ -32,7 +32,10 @@ response.writeHeader(200, {
 response.write('{ "status": true }');
 response.end();
 } else if (request.url === '/clear' && request.method == 'GET') {
-  clearInterval(interval)
+  leds.forEach((l)=>{
+    l.writeSync(0);  // Turn LED off.
+    l.unexport();    // Unexport GPIO and free resources
+  })
 } else {
 response.writeHeader(200, {
 "Content-Type": "application/json",
