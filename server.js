@@ -5,10 +5,12 @@ var server = http.createServer(function(request, response) {
 if (request.url === '/trigger' && request.method == 'GET') {
 // turn on the buzzer
 
+var time = 0
 leds.forEach((l)=>{
   setTimeout(function(){
     l.writeSync(1)
-  }, 100)
+  }, time)
+  time += 100
 })
 
 setTimeout(function() {
