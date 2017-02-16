@@ -25,17 +25,18 @@ var interval = setInterval(function(){
   }, 100);
 }, 1200)
 
+setTimeout(function(){
+  clearInterval(interval)
+}, 12000)
+
 response.writeHeader(200, {
 "Content-Type": "application/json",
 "Access-Control-Allow-Origin": "*"
 });
 response.write('{ "status": true }');
 response.end();
-} else if (request.url === '/clear' && request.method == 'GET') {
-  leds.forEach((l)=>{
-    l.writeSync(0);  // Turn LED off.
-    // l.unexport();    // Unexport GPIO and free resources
-  })
+} else if (request.url === '/trigger' && request.method == 'GET') {
+
 } else {
 response.writeHeader(200, {
 "Content-Type": "application/json",

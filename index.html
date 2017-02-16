@@ -19,7 +19,7 @@
   <div class="container">
     <div class="col-md-12">
       <button type="button" id='trigger' class="btn btn-primary btn-block">Trigger</button>
-      <button type="button" disabled=true id='clear' class="btn btn-primary btn-block">Clear</button>
+      <button type="button" id='clear' class="btn btn-primary btn-block">Clear</button>
     </div>
   </div>
 
@@ -38,7 +38,6 @@
   })
   $(function() {
     $('#clear').on('click', function() {
-       $('#clear').prop('disabled', true);
       $.get('http://10.0.0.75:8088/clear', function(data) {
        $('#trigger').prop('disabled', false).text('Trigger')
       });
