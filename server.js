@@ -19,6 +19,7 @@ setTimeout(function() {
     setTimeout(function(){
       l.writeSync(0)
     }, time2)
+    time2 += 100
   })
 }, 100);
 
