@@ -4,16 +4,19 @@ module.exports = function(leds) {
 var server = http.createServer(function(request, response) {
 if (request.url === '/trigger' && request.method == 'GET') {
 // turn on the buzzer
+
 leds.forEach((l)=>{
-  l.writeSync(1)
+  setTimeout(function(){
+    l.writeSync(1)
+  }, 100)
 })
 
-// turn off the buzzer after 2 seconds
 setTimeout(function() {
   leds.forEach((l)=>{
     l.writeSync(0)
   })
-}, 2000);
+}, 12000);
+
 response.writeHeader(200, {
 "Content-Type": "application/json",
 "Access-Control-Allow-Origin": "*"
