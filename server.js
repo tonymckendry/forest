@@ -12,9 +12,9 @@ leds.forEach((l)=>{
 })
 
 // turn off the buzzer after 2 seconds
-setTimeout(function() {
-led.writeSync(0);
-}, 2000);
+// setTimeout(function() {
+// led.writeSync(0);
+// }, 2000);
 response.writeHeader(200, {
 "Content-Type": "application/json",
 "Access-Control-Allow-Origin": "*"
