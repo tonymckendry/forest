@@ -13,11 +13,14 @@ leds.forEach((l)=>{
   time += 100
 })
 
+var time2 = 100
 setTimeout(function() {
   leds.forEach((l)=>{
-    l.writeSync(0)
+    setTimeout(function(){
+      l.writeSync(0)
+    }, time2)
   })
-}, 1200);
+}, 100);
 
 response.writeHeader(200, {
 "Content-Type": "application/json",
