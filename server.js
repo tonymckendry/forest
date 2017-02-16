@@ -5,23 +5,25 @@ var server = http.createServer(function(request, response) {
 if (request.url === '/trigger' && request.method == 'GET') {
 // turn on the buzzer
 
-var time = 0
-leds.forEach((l)=>{
-  setTimeout(function(){
-    l.writeSync(1)
-  }, time)
-  time += 100
-})
-
-var time2 = 100
-setTimeout(function() {
+for (var i = 0; i < 6; i++) {  
+  var time = 0
   leds.forEach((l)=>{
     setTimeout(function(){
-      l.writeSync(0)
-    }, time2)
-    time2 += 100
+      l.writeSync(1)
+    }, time)
+    time += 100
   })
-}, 100);
+
+  var time2 = 100
+  setTimeout(function() {
+    leds.forEach((l)=>{
+      setTimeout(function(){
+        l.writeSync(0)
+      }, time2)
+      time2 += 100
+    })
+  }, 100);
+}
 
 response.writeHeader(200, {
 "Content-Type": "application/json",
