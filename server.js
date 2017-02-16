@@ -18,7 +18,7 @@ led.writeSync(0);
 response.writeHeader(200, {
 "Content-Type": "application/json",
 "Access-Control-Allow-Origin": "*"
-});]
+});
 response.write('{ "status": true }');
 response.end();
 } else {
