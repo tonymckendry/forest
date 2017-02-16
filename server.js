@@ -17,7 +17,7 @@ setTimeout(function() {
   leds.forEach((l)=>{
     l.writeSync(0)
   })
-}, 12000);
+}, 1200);
 
 response.writeHeader(200, {
 "Content-Type": "application/json",
