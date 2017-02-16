@@ -12,4 +12,6 @@ var led10 = new Gpio(25, 'out')
 var led11 = new Gpio(12, 'out')
 var led12 = new Gpio(16, 'out')
 
-var server = require('./server')(led1)
+var leds = [led1, led2, led3, led4, led5, led6, led7, led8, led9, led10, led11, led12]
+
+var server = require('./server')(leds)

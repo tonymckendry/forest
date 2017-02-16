@@ -30,7 +30,7 @@
   $(function() {
     $('button').on('click', function() {
        $('button').prop('disabled', true).text('Trigerring');
-      $.get('http://localhost:8808/trigger', function(data) {
+      $.get('http://10.0.0.75:8088/trigger', function(data) {
        $('button').prop('disabled', false).text('Trigger');
       });
     });
