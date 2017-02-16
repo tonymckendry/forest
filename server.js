@@ -5,7 +5,7 @@ var server = http.createServer(function(request, response) {
 if (request.url === '/trigger' && request.method == 'GET') {
 // turn on the buzzer
 
-setInterval(function(){
+var interval = setInterval(function(){
   var time = 0
   leds.forEach((l)=>{
     setTimeout(function(){
@@ -24,6 +24,10 @@ setInterval(function(){
     })
   }, 100);
 }, 1200)
+
+setTimeout(function(){
+  clearInterval(interval)
+}, 24000)
 
 response.writeHeader(200, {
 "Content-Type": "application/json",
