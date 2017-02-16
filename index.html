@@ -18,7 +18,8 @@
   <br/>
   <div class="container">
     <div class="col-md-12">
-      <button type="button" class="btn btn-primary btn-block">Trigger</button>
+      <button type="button" id='trigger' class="btn btn-primary btn-block">Trigger</button>
+      <button type="button" disabled=true id='clear' class="btn btn-primary btn-block">Clear</button>
     </div>
   </div>
 
@@ -28,10 +29,16 @@
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <script type="text/javascript">
   $(function() {
-    $('button').on('click', function() {
-       $('button').prop('disabled', true).text('Trigerring');
+    $('#trigger').on('click', function() {
+       $('#trigger').prop('disabled', true).text('Trigerring');
       $.get('http://10.0.0.75:8088/trigger', function(data) {
-       $('button').prop('disabled', false).text('Trigger');
+       $('#clear').prop('disabled', false)
+      });
+    });
+    $('#clear').on('click', function() {
+       $('#clear').prop('disabled', true);
+      $.get('http://10.0.0.75:8088/clear', function(data) {
+       $('#trigger').prop('disabled', false).text('Trigger')
       });
     });
   })

@@ -25,16 +25,14 @@ var interval = setInterval(function(){
   }, 100);
 }, 1200)
 
-setTimeout(function(){
-  clearInterval(interval)
-}, 24000)
-
 response.writeHeader(200, {
 "Content-Type": "application/json",
 "Access-Control-Allow-Origin": "*"
 });
 response.write('{ "status": true }');
 response.end();
+} else if (request.url === '/clear' && request.method == 'GET') {
+  clearInterval(interval)
 } else {
 response.writeHeader(200, {
 "Content-Type": "application/json",
