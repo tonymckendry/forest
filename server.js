@@ -34,7 +34,7 @@ response.end();
 } else if (request.url === '/clear' && request.method == 'GET') {
   leds.forEach((l)=>{
     l.writeSync(0);  // Turn LED off.
-    l.unexport();    // Unexport GPIO and free resources
+    // l.unexport();    // Unexport GPIO and free resources
   })
 } else {
 response.writeHeader(200, {
